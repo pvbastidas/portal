@@ -1,0 +1,87 @@
+extends ../layouts/default
+
+block intro
+  .container
+    .row
+      .breadcrumbDiv.col-lg-12
+        ul.breadcrumb
+          li
+            a(href='/') Inicio
+          li.active Información del establecimiento
+
+    if store.name
+      h3.section-title.style2.text-center
+        span Información del establecimiento
+
+block content
+    .container
+      if store.name
+        .content-right
+          a.btn.btn-primary(href='/store_edit/#{store._id}', role='button') Editar
+        .row
+          .col-sm-collapse-right.col-sm-6
+            .panel-container
+              .panel-container-body
+                .inbox-avatar
+                  img(src='#{store.image.url}', width='40', height='40')
+                  .inbox-avatar-name
+                    .fg-darkgrayishblue75 #{store.name}
+                    .fg-text
+                        small #{store.address}
+                  .inbox-date.fg-text.text-right
+                    div(style='position: relative; top: 0px;')
+                      span.glyphicon.glyphicon-calendar
+                    div(style='position: relative; top: -5px;')
+                      strong #{date}
+                div
+                  small
+                    strong #{store.description}
+            .panel-container
+              .bg-gray
+                .text-green
+                  strong Recargas Recientes
+              .panel-container-body
+                each c in charges
+                  .inbox-avatar
+                    img(src='#{c.client.image}', width='40', height='40')
+                    .inbox-avatar-name
+                      .fg-darkgrayishblue75 #{c.client.name}
+                      .fg-text
+                          | Fin de Carga:&nbsp;
+                          small #{moment(c.endDate).format('MM/DD/YYYY, H:mm a')}
+                    .inbox-date.fg-text.text-right
+                      div(style='position: relative; top: 0px;')
+                        strong #{c.time} min
+
+          .col-sm-6
+            .panel-container
+              .panel-container-body
+                .text-green
+                  strong Geo Localización:
+                .fg-text #{store.location.lat}  #{store.location.lon}
+                div#map
+      else
+        h4
+          | No tiene asignada ninguna tienda.
+
+block head
+    script.
+      function initMap() {
+        var userpoint = {lat: #{store.location.lat}, lng: #{store.location.lon}};
+        var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 15,
+        center: userpoint,
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        streetViewControl: false,
+        mapTypeControl:false,
+        zoomControl: false,
+        scrollwheel: false,
+        draggable: false
+        });
+        var marker = new google.maps.Marker({
+        position: userpoint,
+        map: map
+        });
+      }
+
+    script(async='', defer='', src='https://maps.googleapis.com/maps/api/js?key=#{GOOGLE_API_KEY}&callback=initMap')

@@ -1,0 +1,74 @@
+[
+	{
+        "_id" : ObjectId("5801537d8850eb158582133a"),
+        "client" : ObjectId("5801535b8850eb1585821338"),
+        "device_id" : "12344",
+        "store" : ObjectId("5801536e8850eb1585821339"),
+        "state": "start",
+        "startDate": ISODate("2016-10-14T21:41:31.439Z"),
+        "endDate": ISODate("2016-10-14T21:50:40.620Z")
+	},
+	{
+        "_id" : ObjectId("5803d7bbc1466c3a499d99b1"),
+        "client" : ObjectId("5801535b8850eb1585821338"),
+        "device_id" : "12344",
+        "store" : ObjectId("5801536e8850eb1585821339"),
+        "state": "stop",
+        "startDate": ISODate("2016-10-14T21:55:41.798Z"),
+        "endDate": ISODate("2016-10-14T21:56:28.565Z")
+	},
+	{
+        "_id" : ObjectId("580154b18850eb158582133b"),
+        "client" : ObjectId("5801535b8850eb1585821338"),
+        "device_id" : "12344",
+        "store" : ObjectId("5801536e8850eb1585821339"),
+        "state": "stop",
+        "startDate": ISODate("2016-10-14T21:55:41.798Z"),
+        "endDate": ISODate("2016-10-14T22:02:59.670Z")
+	},
+        {
+        "_id" : ObjectId("5804018bc1466c3a499d99b2"),
+        "client" : ObjectId("5801535b8850eb1585821338"),
+        "device_id" : "12344",
+        "store" : ObjectId("5801536e8850eb1585821339"),
+        "state": "stop",
+        "startDate": ISODate("2016-10-14T21:55:41.798Z"),
+        "endDate": ISODate("2016-10-14T22:02:59.670Z")
+        },
+        {
+        "_id" : ObjectId("58040191c1466c3a499d99b3"),
+        "client" : ObjectId("5801535b8850eb1585821338"),
+        "device_id" : "12344",
+        "store" : ObjectId("5801536e8850eb1585821339"),
+        "state": "stop",
+        "startDate": ISODate("2016-10-14T21:55:41.798Z"),
+        "endDate": ISODate("2016-10-14T22:02:59.670Z")
+        },
+        {
+        "_id" : ObjectId("58040197c1466c3a499d99b4"),
+        "client" : ObjectId("5801535b8850eb1585821338"),
+        "device_id" : "12344",
+        "store" : ObjectId("5801536e8850eb1585821339"),
+        "state": "stop",
+        "startDate": ISODate("2016-10-14T21:55:41.798Z"),
+        "endDate": ISODate("2016-10-14T22:02:59.670Z")
+        },
+        {
+        "_id" : ObjectId("580401a8c1466c3a499d99b5"),
+        "client" : ObjectId("5801535b8850eb1585821338"),
+        "device_id" : "12344",
+        "store" : ObjectId("5801536e8850eb1585821339"),
+        "state": "stop",
+        "startDate": ISODate("2016-10-14T21:55:41.798Z"),
+        "endDate": ISODate("2016-10-14T22:02:59.670Z")
+        },
+        {
+        "_id" : ObjectId("580401d9c1466c3a499d99b6"),
+        "client" : ObjectId("5801535b8850eb1585821338"),
+        "device_id" : "12344",
+        "store" : ObjectId("5801536e8850eb1585821339"),
+        "state": "stop",
+        "startDate": ISODate("2016-10-14T21:55:41.798Z"),
+        "endDate": ISODate("2016-10-14T22:02:59.670Z")
+        }
+]

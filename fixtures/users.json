@@ -1,0 +1,13 @@
+[
+{
+	"_id" : ObjectId("5801535b8850eb1585821338"),
+	"user_id" : "102353903095411604358",
+	"name" : "Janina Tatiana Herrera Riofrio",
+	"email" : "ninataty@gmail.com",
+	"isAdmin" : false,
+	"store": ObjectId("5801536e8850eb1585821339"),
+	"password" : "$2a$10$W0Q52QYS63qDf8FE/ISVWOC.kPA25KhoytW9iT3VEjio0HcKyFX5.",
+	"image" : "https://lh6.googleusercontent.com/-i4yLhhJvj8Y/AAAAAAAAAAI/AAAAAAAAAB0/9aSpOHWAoxs/photo.jpg",
+	"accessToken" : "eyJhbGciOiJSUzI1NiIsImtpZCI6Ijc2ZWM0OWRkMjllMjc5ZjdjNDI1ODMzMTMwOTYzOTdiYTMwM2U2MzgifQ.eyJpc3MiOiJhY2NvdW50cy5nb29nbGUuY29tIiwiYXRfaGFzaCI6ImxWQXQ3Y0tGNzVTZFRZLVVLWnVPUUEiLCJhdWQiOiI4OTM2NzI4MzY4OTgtaGl0cmJnNHJtMWplbXQxOWtlcXNhb29rZzZ2cnAydmEuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMDIzNTM5MDMwOTU0MTE2MDQzNTgiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiYXpwIjoiODkzNjcyODM2ODk4LWhpdHJiZzRybTFqZW10MTlrZXFzYW9va2c2dnJwMnZhLmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwiZW1haWwiOiJuaW5hdGF0eTEyQGdtYWlsLmNvbSIsImlhdCI6MTQ3NjM4MDgyNiwiZXhwIjoxNDc2Mzg0NDI2fQ.aWKk4EfzlVunU8C2wvet97OpHb0bSqjHMkiL1cnvsB2_DtSm9jj7cwYV8QQb-S6NxvIlCtn9m8mLxX9whI60XbZ9PVjDqcGa3qYQOiz1-Arq8B1F_uD8KrPu-wvhb9yVgpl-WhqnC6DCdqzIyB4YhYJ92hzjUZgtx1kVU5D1b5b_2x4W1eItt2YUy_9AjCvwk6vy6pEHOT0THSd_B_dsHKkBFPOJna58AIyoBU7QN7oRfhqAY2sHALld2bMNoBhUEE5DbqrdsBJ56YEGIE_cQq7JZfKYK1edow-oXX1kVjvveLQ9ybYytajipvTm5MLs6_5vOs3E35s1Imz1sSAoXg"
+}
+]

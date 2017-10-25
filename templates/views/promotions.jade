@@ -1,0 +1,62 @@
+extends ../layouts/default
+
+block intro
+  .container
+    .row
+      .breadcrumbDiv.col-lg-12
+        ul.breadcrumb
+          li
+            a(href='/') Inicio
+          li.active Promociones
+
+    h3.section-title.style2.text-center
+      span Promociones
+
+block content
+  .container
+    .row.search-series
+      .col-md-6.col-xs-12
+        form(method='post')
+          input(type='hidden', name='action', value='buscarPromotions')
+          .input-group
+            span.input-group-addon
+              span.glyphicon.glyphicon-search
+            input.form-control(type='text', placeholder='Ingrese el nombre de la promoción', name='promotion')
+            span.input-group-btn
+              button.btn.btn-primary.btn-search(type='submit' id="submit") Buscar
+
+    br
+    div.pull-right
+      a.btn.btn-primary(href='/new_promotion', role='button') Agregar
+
+
+    if promotions
+      if query
+        p Buscar:
+          span.label.label-warning #{query}
+
+      if promotions.length
+        table(class="table")
+          thead
+            tr
+              th Nombre
+              th Descripción
+              th F. exp
+              th Estado
+              th Puntos
+          tbody
+              each e in promotions
+                tr
+                  td=e.name
+                  td=e.description
+                  td=e.fecha_exp.toDateString()
+                  td=e.state
+                  td=e.point
+                    a.btn.btn-primary(href='/edit_promotion/#{e._id}', role='button') Editar
+      else
+        p
+          p
+            span.lead.price No existen promociones.
+
+block js
+    script(src='/js/modals.js')

@@ -1,0 +1,38 @@
+extends ../layouts/default
+
+block intro
+  .container
+    .row
+      .breadcrumbDiv.col-lg-12
+        ul.breadcrumb
+          li
+            a(href='/') Inicio
+          li.active Nueva promoción
+    h3.section-title.style2.text-center
+      span Crear promoción
+
+block content
+  .container
+      form(method='post' id="new_promotion_form" action="/new_promotion")
+        input(type='hidden' name='action' value='new_promotion')
+        input(type='hidden' name='id' value=formData['_id'])
+        .form-group(class=validationErrors.name ? 'has-error' : null)
+          label Nombre
+          input(type='text', name='name', value=formData['name']).form-control
+        .form-group(class=validationErrors.point ? 'has-error' : null)
+          label Puntos
+          input(type='number', name='point', value=formData['point']).form-control  
+        .form-group(class=validationErrors.description ? 'has-error' : null)
+          label Descripción
+          textarea.form-control(name='description', rows='4', cols='5')
+            | #{formData['description']}
+        .form-group(class=validationErrors.fecha_exp ? 'has-error' : null)
+          label Fecha de expiraciónsss
+          input(type='date', name='fecha_exp', value=date).form-control
+        .form-group(class=validationErrors.state ? 'has-error' : null)
+          label Estado
+          select(name='state', form='new_promotion_form').form-control
+            option(value='activo' selected=formData['state'] === 'activo') Activo
+            option(value='inactivo' selected=formData['state'] === 'inactivo') Inactivo
+
+        button.btn.btn-primary(type='submit' id="submit") Guardar

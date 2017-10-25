@@ -1,0 +1,191 @@
+#footer {
+	margin-top: 30px;
+	border-top: 1px solid #eeeeee;
+	padding-top: 30px;
+	color: #777777;
+}
+
+.gallery-image img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.panel-container {
+	border: 2px solid @gray-light;
+	background: @white;
+	overflow: hidden;
+    position: relative;
+    border-radius: 8px;
+    margin-bottom: 25px;
+}
+
+.text-green {
+	color: @green;
+}
+
+.fg-text {
+	color: @gray;
+}
+
+.panel-container-body {
+	padding: 12.5px 25px 25px;
+}
+
+.inbox-avatar {
+	padding-top: 12.5px;
+    padding-bottom: 12.5px;
+    border-bottom: 2px solid @gray-light;
+}
+
+.inbox-avatar-name {
+	text-align: left;
+    padding-left: 12.5px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.inbox-date {
+	float: right;
+}
+
+.content-right {
+	display: flex;
+	justify-content: flex-end;
+	padding-bottom: 10px;
+}
+
+.bg-gray {
+	background: @gray-light;
+	padding: 10px;
+    text-align: center;
+}
+
+.inbox-avatar img {
+	border-radius: 50%;
+}
+
+#map {
+	padding-top: 20px;
+	height: 475px;
+}
+
+.nav-top {
+	height: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	// color: @green-dark;
+}
+
+.padding-left {
+	padding-left: 10px;
+}
+
+.logo {
+	height: 45px;
+    margin-top: -13px;
+}
+
+
+// Bootstrap
+.btn-primary {
+	background-color: @green-dark !important;
+    border-color: @green-dark !important;
+    color: @white !important;
+}
+
+a {
+	color:  @green-dark !important;
+}
+
+.navbar {
+	background-color: @black-6c;
+}
+
+.breadcrumb>.active {
+	color: darken(@green, 30%);
+}
+
+.nav>li>a:hover, .nav>li>a:focus {
+	background-color: lighten(@black-6c, 20%);
+}
+
+.pagination>.active>a,
+.pagination>.active>span,
+.pagination>.active>a:hover,
+.pagination>.active>span:hover,
+.pagination>.active>a:focus,
+.pagination>.active>span:focus {
+	background-color: @green-dark !important;
+    border-color: @green-dark !important;
+    color: @white !important
+}
+
+.navbar-toggle {
+	background-color: @green-dark !important;
+
+	.icon-bar {
+		background-color: @white !important;
+	}
+}
+
+.bg-primary {
+	background-color:  @green-dark !important;
+	border-radius: 4px;
+}
+
+.splash-container {
+	background: url("/images/bg-image.png") center center no-repeat;
+	background-size: cover;
+	position: absolute;
+	top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: @white;
+    opacity: 0.4;
+    z-index: -1;
+
+}
+
+.splash-image {
+	width: 240px;
+	height: 100%;
+	padding-bottom: 100px;
+
+	@media (max-width: 767px) {
+        width: 150px;
+    }
+};
+
+.content-center {
+	display: flex;
+    justify-content: center;
+}
+
+.splash-button {
+	padding-top: 40px;
+}
+
+.splash-footer {
+	border-top: 1px solid @black-6c;
+	text-align: right;
+	position: absolute;
+	bottom: 0;
+}
+
+.splash-title {
+	font-size: 35px;
+	height: 145px;
+	display: flex;
+	align-items: center;
+	border-left: 2px solid @black-6c;
+	margin-top: 10px;
+	font-weight: bold;
+
+	@media (max-width: 767px) {
+        height: 85px;
+        font-size: 20px;
+    }
+}

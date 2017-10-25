@@ -1,0 +1,50 @@
+[
+{
+	"_id" : ObjectId("58028e088850eb158582133c"),
+	"name" : "Jueves 2x1",
+	"description" : "Jueves 2x1 en alitas",
+	"store" : ObjectId("5801536e8850eb1585821339"),
+	"fecha_exp" : "2016-10-14T21:56:28.565Z",
+	"state": "activo"
+},
+{
+	"_id" : ObjectId("58043695c1466c3a499d99b7"),
+	"name" : "Martes 2x1",
+	"description" : "Martes 2x1 en bebidas",
+	"store" : ObjectId("5801536e8850eb1585821339"),
+	"fecha_exp" : "2016-10-14T21:56:28.565Z",
+	"state": "activo"
+},
+{
+	"_id" : ObjectId("580446b9c1466c3a499d99b8"),
+	"name" : "Lunes 3x1",
+	"description" : "Lunes 3x1 en bebidas",
+	"store" : ObjectId("5801536e8850eb1585821339"),
+	"fecha_exp" : "2016-10-14T21:56:28.565Z",
+	"state": "activo"
+},
+{
+	"_id" : ObjectId("580446c2c1466c3a499d99b9"),
+	"name" : "Martes 2x1",
+	"description" : "Martes 2x1 en postres",
+	"store" : ObjectId("5801536e8850eb1585821339"),
+	"fecha_exp" : "2016-10-14T21:56:28.565Z",
+	"state": "activo"
+},
+{
+	"_id" : ObjectId("580446c7c1466c3a499d99ba"),
+	"name" : "Martes 2x1",
+	"description" : "Martes 2x1 en cerveza",
+	"store" : ObjectId("5801536e8850eb1585821339"),
+	"fecha_exp" : "2016-10-14T21:56:28.565Z",
+	"state": "activo"
+}
+,{
+	"_id" : ObjectId("580446d0c1466c3a499d99bb"),
+	"name" : "Martes 2x1",
+	"description" : "Martes 2x1 en nachos",
+	"store" : ObjectId("5801536e8850eb1585821339"),
+	"fecha_exp" : "2016-10-14T21:56:28.565Z",
+	"state": "activo"
+}
+]

@@ -1,0 +1,50 @@
+
+extends ../layouts/default
+
+block userinfo
+  if user
+    .row
+      .container: .well.col-md-12
+        if user
+        
+  else
+    .splash-container
+    .container
+      .row
+        .col-md-3.col-sm-5.col-xs-4.content-center
+          img.splash-image(src='/images/logo_black.png')
+        .col-md-4.col-sm-3.col-xs-6.splash-title
+          | WIRELESS ENERGY
+      .row.text-center
+        .col-md-12.content-center
+          .row.text-center
+
+            h4 Inicia sesión en Enerwisss
+            .form-group.login-username
+              input#login-user.form-control.input(size='40', name='email' placeholder='Correo electrónico')
+            .form-group
+              input#login-password.form-control.input(name='password', size='30', placeholder='Contraseña', type='password')
+            button(type='submit' onclick="signin()").btn.btn-block.btn-primary.btn-submit ENTRAR
+      br      
+      .row.text-center   
+        .col-md-5.col-md-offset-1.content-center
+          .alert.alert-danger(role='alert', style='display: none', id="messageLogin-container")
+           span.glyphicon.glyphicon-exclamation-sign.padding-icon(aria-hidden='true')
+           span#messageLogin 
+                
+      .row.splash-footer
+        h5 ¡Enerwi lo cambiará todo!
+block js
+  script(src='/js/modals.js')
+
+
+
+
+
+
+
+
+
+
+
+

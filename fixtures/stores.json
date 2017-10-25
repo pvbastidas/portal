@@ -1,0 +1,23 @@
+[
+{
+	"_id" : ObjectId("5801536e8850eb1585821339"),
+	"address" : "Av. Pio Jaramillo Alvarado y reinaldo espinoza",
+	"name" : "Koken Coffee Shop",
+	"description" : "Koken",
+	"location" : {
+		"lat" : -4.032201,
+		"lon" : -79.2019728
+	},
+	"image" : {
+		"public_id" : "g1i31lg467hjkm9xkgmu",
+		"version" : 1476219410,
+		"signature" : "cc144c8cece5816d61237990f7dbcbda44aea770",
+		"width" : 180,
+		"height" : 117,
+		"format" : "png",
+		"resource_type" : "image",
+		"url" : "http://res.cloudinary.com/keystone-demo/image/upload/v1476219410/g1i31lg467hjkm9xkgmu.png",
+		"secure_url" : "https://res.cloudinary.com/keystone-demo/image/upload/v1476219410/g1i31lg467hjkm9xkgmu.png"
+	}
+}
+]

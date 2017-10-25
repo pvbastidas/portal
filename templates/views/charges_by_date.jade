@@ -1,0 +1,98 @@
+extends ../layouts/default
+
+block intro
+  .container
+    .row
+      .breadcrumbDiv.col-lg-12
+        ul.breadcrumb
+          li
+            a(href='/') Inicio
+          li.active Recargas
+
+    h3.section-title.style2
+      span Reporte de cargas &nbsp;
+      a.btn.btn-primary.btn-sm(href="#" data-toggle="modal" data-target="#ModalFilter") Filtrar por Fecha
+
+block content
+  .modal.fade#ModalFilter(tabindex='-1', role='dialog')
+    .modal-dialog
+      .modal-content
+        .modal-header.bg-primary
+          button.close(type='button', data-dismiss='modal', aria-hidden='true') ×
+          h3.modal-title-site.text-center Rango de fechas
+        .modal-body
+          form(method='post')
+            input(type='hidden', name='action', value='searchChargesByDate')
+            .form-group
+              label Fecha inicial
+              .input-group
+                span.input-group-addon
+                  span.glyphicon.glyphicon-calendar
+                input(type='date', name='start_date' value=start_date).form-control
+            .form-group
+              label Fecha final
+              .input-group
+                span.input-group-addon
+                  span.glyphicon.glyphicon-calendar
+                input(type='date', name='end_date' value=end_date).form-control
+            .modal-footer
+              button.btn.btn-default(type='button', data-dismiss='modal') Cancelar
+              button.btn.btn-primary(type='submit' id="submit") Buscar
+  .container
+    if charges.results
+      if charges.results.length
+        .panel-container
+            .bg-gray
+              .text-green
+                h4
+                  strong CARGANDO EN ESTE MOMENTO
+                    if start_date
+                      span desde #{start_date} hasta #{end_date}
+            .panel-container-body
+              each c in charges.results
+                //- .inbox-avatar.visible-sm.visible-xs
+                //-   img(src='#{c.client.image}', width='40', height='40')
+                //-   .inbox-avatar-name
+                //-     .row
+                //-       .col-md-4
+                //-         .fg-darkgrayishblue75 #{c.client.name}
+                //-       .col-md-4.fg-text
+                //-           strong
+                //-             | Fecha de inicio:&nbsp;
+                //-           small #{moment(c.startDate).format('MM/DD/YYYY, h:mm:s a')}
+                //-        .col-md-4.fg-text
+                //-           strong
+                //-             | Fecha final:&nbsp;
+                //-           img(src='https://media.giphy.com/media/NbgaOYcp7M7NS/giphy.gif', width='40', height='40')
+                //-     if c.store
+                //-       div.hidden-xs
+                //-         | #{c.store.name}
+                .inbox-avatar.row.hidden-sm.hidden-xs
+                  .col-md-1
+                    img(src='#{c.client.image}', width='40', height='40')
+                  .col-md-3
+                    | #{c.client.name}
+                  .col-md-3.fg-text
+                      strong
+                        | Fecha de inicio:&nbsp;
+                      small #{moment(c.startDate).format('MM/DD/YYYY, h:mm:s a')}
+                  .col-md-5
+                        img(src='/images/loading.gif', width='50', height='50')
+
+
+              .text-center
+                ul.pagination
+                  if charges.previous
+                      li: a(href='?page=' + charges.previous): span.glyphicon.glyphicon-chevron-left
+                  else
+                      li.disabled: a(href='/searchChargesByDate?page=' + 1): span.glyphicon.glyphicon-chevron-left
+                  each p, i in charges.pages
+                      li(class=charges.currentPage == p ? 'active' : null)
+                          a(href='?page=' + (p == '...' ? (i ? charges.totalPages : 1) : p ))= p
+                  if charges.next
+                      li: a(href='?page=' + charges.next): span.glyphicon.glyphicon-chevron-right
+                  else
+                      li.disabled: a(href='?page=' + charges.totalPages): span.glyphicon.glyphicon-chevron-right
+block js
+  script(src='/js/modals.js')
+

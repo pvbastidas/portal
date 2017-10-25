@@ -1,0 +1,35 @@
+extends ../layouts/default
+
+block intro
+  .container
+    .row
+      .breadcrumbDiv.col-lg-12
+        ul.breadcrumb
+          li
+            a(href='/') Inicio
+          li.active Editar establecimiento
+    h3.section-title.style2.text-center
+      span Editar establecimiento
+
+block content
+  .container
+      form(method='post')
+        input(type='hidden', name='action', value='editStore')
+        .form-group(class=validationErrors.name ? 'has-error' : null)
+          label Nombre
+          input(type='text', name='name', value=formData['name']).form-control
+        .form-group(class=validationErrors.address ? 'has-error' : null)
+          label Dirección
+          input(type='text', name='address', value=formData['address']).form-control
+        .form-group
+          label Geo Localización
+          .row
+            .col-xs-6(class=validationErrors.location ? 'has-error' : null)
+              input(type='text', name='location.lat' value=formData['location'].lat placeholder='Latitud').form-control
+            .col-xs-6(class=validationErrors.location ? 'has-error' : null)
+              input(type='text', name='location.lon' value=value=formData['location'].lon placeholder='Longitud').form-control
+        .form-group(class=validationErrors.description ? 'has-error' : null)
+          label Descripción
+          textarea.form-control(name='description', rows='4', cols='5')
+            | #{formData['description']}
+        button.btn.btn-primary(type='submit' id="submit") Guardar
