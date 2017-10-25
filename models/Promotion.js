@@ -9,7 +9,7 @@ Promotion.add({
     store: { type: Types.Relationship, ref: 'Store',required: true, index: true, initial: true, label: 'Tienda'},
     fecha_exp: {type: Types.Date, required: true, index: true, initial: true},
     image: { type: Types.CloudinaryImage },
-    point: {type:Number, label: 'Puntos'},
+    point: {type:Number, required: true, index: true, initial: true, label: 'Puntos'},
     state: {type: Types.Select, options: 'activo, inactivo', default: 'activo', index: true, require: true, initial: true, label: 'Estado'}
 });
 
