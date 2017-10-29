@@ -39,19 +39,29 @@ block content
             .panel-container
               .bg-gray
                 .text-green
-                  strong Recargas Recientes
+                  strong CARGANDO EN ESTE MOMENTO
               .panel-container-body
                 each c in charges
-                  .inbox-avatar
-                    img(src='#{c.client.image}', width='40', height='40')
-                    .inbox-avatar-name
-                      .fg-darkgrayishblue75 #{c.client.name}
-                      .fg-text
-                          | Fin de Carga:&nbsp;
-                          small #{moment(c.endDate).format('MM/DD/YYYY, H:mm a')}
-                    .inbox-date.fg-text.text-right
-                      div(style='position: relative; top: 0px;')
-                        strong #{c.time} min
+                  .inbox-avatar.row.hidden-sm.hidden-xs
+                    .col-md-5
+                      if c.client.image
+                        img(src='#{c.client.image}', width='40', height='40')
+                        .inbox-avatar-name
+                          .fg-darkgrayishblue75 #{c.client.name}
+                          .fg-text
+                      else
+                        img(src='/images/avatar_man.png', width='40', height='40')
+                        .inbox-avatar-name
+                          .fg-darkgrayishblue75 #{c.client.name}
+                          .fg-text
+
+                    .col-md-5.fg-text
+                        strong
+                          | Fecha de inicio&nbsp;
+                        br
+                        small #{moment(c.startDate).format('MM/DD/YYYY, h:mm:s a')}
+                    .col-md-2
+                          img(src='/images/loading.gif', width='50', height='50')
 
           .col-sm-6
             .panel-container

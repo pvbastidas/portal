@@ -39,16 +39,19 @@ exports = module.exports = function (app) {
 	app.options('/api*', function(req, res) {
 		res.sendStatus(200);
 	});
-
+ 
 	// Views
 	app.get('/', routes.views.index);
 	app.all('/promotions', routes.views.promotions);
 	app.all('/new_promotion', routes.views.new_promotion);
 	app.all('/edit_promotion/:promo_id', routes.views.edit_promotion);
 	app.post('/charges_by_date', routes.views.charges_by_date);
+	//app.post('/charges_by_date', routes.views.store_info);
 	app.all('/charges_by_date/:start_date?/:end_date?', routes.views.charges_by_date);
 	app.all('/store_info', routes.views.store_info);
+	app.get('/store_info/currentCharges', routes.views.store_info.currentCharges);
 	app.all('/charges_by_date', routes.views.charges_by_date);
+	//app.all('/charges_by_date', routes.views.store_info);
 	app.all('/change_password', routes.views.change_password);
 	app.all('/store_edit/:id', routes.views.store_edit);
 

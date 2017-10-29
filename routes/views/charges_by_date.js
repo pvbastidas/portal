@@ -33,9 +33,7 @@ exports = module.exports = function(req, res) {
     if (req.params.start_date && req.params.end_date) {
       locals.start_date = req.params.start_date;
       locals.end_date = req.params.end_date;
- console.log('aqui imprimoooooooo')
-      console.log(locals.start_date);
-      console.log(locals.end_date);
+
       iso_start_date = new Date(req.params.start_date);
       iso_end_date = new Date(req.params.end_date);
     }
@@ -60,15 +58,12 @@ exports = module.exports = function(req, res) {
       });
     }
 
-    query.where({state: 'start'})
+    query.sort('-endDate')
       .populate('client')
       .populate('store')
-      
       .exec(function(err, charges) {
-
         console.log('DEBUG ', charges);
         locals.charges = charges;
-
         if (charges.results && !charges.results.length || err) {
           req.flash('warning', "No se encontró resultados de su búsqueda");
         }

@@ -3,7 +3,7 @@ extends ../layouts/default
 block intro
   .container
     .row
-      .breadcrumbDiv.col-lg-12
+      .breadcrumbDiv.col-lg-12 
         ul.breadcrumb
           li
             a(href='/') Inicio
@@ -45,7 +45,7 @@ block content
             .bg-gray
               .text-green
                 h4
-                  strong CARGANDO EN ESTE MOMENTO
+                  strong CARAGAS RECIENTES
                     if start_date
                       span desde #{start_date} hasta #{end_date}
             .panel-container-body
@@ -67,17 +67,16 @@ block content
                 //-     if c.store
                 //-       div.hidden-xs
                 //-         | #{c.store.name}
-                .inbox-avatar.row.hidden-sm.hidden-xs
-                  .col-md-1
-                    img(src='#{c.client.image}', width='40', height='40')
-                  .col-md-3
-                    | #{c.client.name}
-                  .col-md-3.fg-text
-                      strong
-                        | Fecha de inicio:&nbsp;
-                      small #{moment(c.startDate).format('MM/DD/YYYY, h:mm:s a')}
-                  .col-md-5
-                        img(src='/images/loading.gif', width='50', height='50')
+                .inbox-avatar
+                  img(src='#{c.client.image}', width='40', height='40')
+                  .inbox-avatar-name
+                    .fg-darkgrayishblue75 #{c.client.name}
+                    .fg-text
+                        | Fin de Carga:&nbsp;
+                        small #{moment(c.endDate).format('MM/DD/YYYY, H:mm a')}
+                  .inbox-date.fg-text.text-right
+                    div(style='position: relative; top: 0px;')
+                      strong #{c.time} min
 
 
               .text-center

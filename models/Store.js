@@ -1,5 +1,6 @@
 var keystone = require('keystone');
 var Types = keystone.Field.Types;
+
 var mongoosastic = require('mongoosastic');
 var Charge = keystone.list('Charge');
 
@@ -20,6 +21,17 @@ Store.add({
 	image: { type: Types.CloudinaryImage },
   description: { type: String, required: false, initial: true, label: 'Descripción'},
 	createdAt: { type: Date, default: Date.now, label: 'Fecha de creación' }
+});
+
+Store.schema.add({
+  coupons: { 
+    type: [{
+      idCoupon: {type: String, unique: true},
+      idCouponSmall: {tipe: String},
+      createdAt: { type: Date, default: Date.now},
+      state: {type: Boolean, default: true}
+    }] 
+  }
 });
 
 Store.schema.post('save', function() {
